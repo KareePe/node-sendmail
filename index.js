@@ -2,14 +2,18 @@ const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
 require("dotenv").config();
-const cors = require('cors');
+const cors = require("cors");
 
 app.use(cors());
 app.use(express.json());
 
 app.post("/sendemail", (req, res) => {
-  const { interested_credit, name, mail, zipcode, company_name } = req.body;
-
+  const data = req.body;
+  let interested_credit = data.interested_credit;
+  let name = data.name;
+  let mail = data.mail;
+  let zipcode = data.zipcode;
+  let company_name = data.company_name;
   if (
     interested_credit === "" ||
     name === "" ||
@@ -68,4 +72,4 @@ app.listen(3000, () => {
   console.log("Node app running port 3000!");
 });
 
-module.exports = app
+module.exports = app;

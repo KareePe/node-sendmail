@@ -44,7 +44,7 @@ app.post("/sendemail", (req, res) => {
 
     const option = {
       from: "zycoda.landing@gmail.com",
-      to: "perapat8589@gmail.com",
+      to: "admin@zycoda.com",
       subject: "ข้อมูลสมัครขอทดลองใช้ Demo",
       text: "ข้อมูลผู้สมัคร",
       html: htmlContent,

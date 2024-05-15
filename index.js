@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
 require("dotenv").config();
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/sendemail", (req, res) => {
